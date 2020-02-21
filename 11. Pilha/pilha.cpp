@@ -4,19 +4,15 @@
 using namespace std;
 
 template <class Type>
-    Pilha::Pilha(int tam)
-    {
-        vet = new Type[tam];
-        max_tam = tam - 1;
-        topo  = -1;
-    }
 
-    Pilha::~Pilha()
+template <class Type>
+    Pilha<Type>::~Pilha()
     {
         delete [] vet;
     }
 
-    void Pilha::empilhar(Type e)
+template <class Type>
+    void Pilha<Type>::empilhar(Type e)
     {
         if(topo == max_tam)
             cout << "Pilha cheia" << endl;
@@ -24,7 +20,8 @@ template <class Type>
             vet[++topo] = e;
     }
 
-    void Pilha::desempilhar()
+template <class Type>
+    void Pilha<Type>::desempilhar()
     {
         if(topo == -1)
             cout << "Pilha vazia" << endl;
@@ -32,14 +29,16 @@ template <class Type>
             topo--;
     }
 
-    int Pilha::getTopo()
+template <class Type>
+    Type Pilha::getTopo()
     {
         if(topo != -1)
             return vet[topo];
         return -1;
     }
 
-    int Pilha::vazia()
+template <class Type>
+Type Pilha::vazia()
     {
         return (topo == -1);
     }

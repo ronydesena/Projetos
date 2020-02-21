@@ -5,7 +5,8 @@ using namespace std;
 
 int main()
 {
-    Pilha p<int>;
+    Pilha<int> p(100);
+
     p.empilhar(10);
     p.empilhar(11);
     p.empilhar(12);

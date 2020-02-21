@@ -9,11 +9,17 @@ private:
      int max_tam;
      int topo;
 public:
-    Pilha(int tam);
-    ~Pilha();
-    void empilhar(int e);
+    Pilha<Type>::Pilha(int tam)
+    {
+        vet = new Type[tam];
+        max_tam = tam - 1;
+        topo  = -1;
+    }
+
+    ~Pilha<Type>();
+    void empilhar(Type e);
     void desempilhar();
-    int getTopo();
+    Type getTopo();
     int vazia();
 };
 
